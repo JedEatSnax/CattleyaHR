@@ -1,23 +1,30 @@
 import { lazy, Suspense } from "react"
 import { Skeleton } from "@/components/ui/skeleton"
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
+import { TooltipProvider } from "@/components/ui/tooltip"
 import ErrorBoundary from "@/components/error-boundary"
 
 const Login = lazy(() => import("@/pages/Login"))
 const Registration = lazy(() => import("@/pages/Registration"))
+const ForgotPassword = lazy(() => import("@/pages/ForgotPassword"))
+const Dashboard = lazy(() => import("@/pages/Dashboard"))
 
 export function App() {
   return (
     <ErrorBoundary>
-      <Suspense fallback={<Skeleton />}>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Navigate to="/login" replace />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/registration" element={<Registration />} />
-          </Routes>
-        </BrowserRouter>
-      </Suspense>
+      <TooltipProvider>
+        <Suspense fallback={<Skeleton />}>
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Navigate to="/login" replace />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/registration" element={<Registration />} />
+              <Route path="/forgot-password" element={<ForgotPassword />} />
+              <Route path="/dashboard" element={<Dashboard />} />
+            </Routes>
+          </BrowserRouter>
+        </Suspense>
+      </TooltipProvider>
     </ErrorBoundary>
   )
 }

@@ -1,4 +1,5 @@
 import { LoginForm } from "@/components/login-form"
+import loginImage from "@/assets/login.jpg"
 
 export default function Login() {
   return (
@@ -13,9 +14,10 @@ export default function Login() {
       </div>
       <div className="relative hidden bg-muted lg:block">
         <img
-          src="/placeholder.svg"
-          alt="Image"
-          className="absolute inset-0 h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
+          src={loginImage}
+          alt="Login Image"
+          loading="lazy"
+          className="absolute inset-0 h-full w-full object-cover dark:brightness-[0.9] dark:grayscale"
         />
       </div>
     </div>

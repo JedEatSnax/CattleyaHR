@@ -8,6 +8,7 @@ import {
   FieldSeparator,
 } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
+import { PasswordInput } from "@/components/ui/password-input"
 
 export function LoginForm({
   className,
@@ -24,30 +25,19 @@ export function LoginForm({
         </div>
         <Field>
           <FieldLabel htmlFor="email">Email</FieldLabel>
-          <Input
-            id="email"
-            type="email"
-            placeholder="m@example.com"
-            required
-            className="bg-background"
-          />
+          <Input id="email" type="email" name="email" required />
         </Field>
         <Field>
           <div className="flex items-center">
             <FieldLabel htmlFor="password">Password</FieldLabel>
             <a
-              href="#"
-              className="ml-auto text-sm underline-offset-4 hover:underline"
+              href="/forgot-password"
+              className="ml-auto text-xs underline-offset-4 hover:underline"
             >
               Forgot your password?
             </a>
           </div>
-          <Input
-            id="password"
-            type="password"
-            required
-            className="bg-background"
-          />
+          <PasswordInput id="password" name="password" required />
         </Field>
         <Field>
           <Button type="submit">Login</Button>
@@ -65,8 +55,8 @@ export function LoginForm({
           </Button>
           <FieldDescription className="text-center">
             Don&apos;t have an account?{" "}
-            <a href="#" className="underline underline-offset-4">
-              Sign up
+            <a href="/registration" className="underline underline-offset-4">
+              Register
             </a>
           </FieldDescription>
         </Field>
