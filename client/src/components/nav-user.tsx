@@ -1,8 +1,4 @@
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "@/components/ui/avatar"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -18,7 +14,14 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar"
-import { EllipsisVerticalIcon, CircleUserRoundIcon, CreditCardIcon, BellIcon, LogOutIcon } from "lucide-react"
+import {
+  EllipsisVerticalIcon,
+  CircleUserRoundIcon,
+  SettingsIcon,
+  BellIcon,
+  LogOutIcon,
+} from "lucide-react"
+import { useNavigate } from "react-router-dom"
 
 export function NavUser({
   user,
@@ -30,6 +33,7 @@ export function NavUser({
   }
 }) {
   const { isMobile } = useSidebar()
+  const navigate = useNavigate()
 
   return (
     <SidebarMenu>
@@ -75,27 +79,23 @@ export function NavUser({
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
-              <DropdownMenuItem>
-                <CircleUserRoundIcon
-                />
+              <DropdownMenuItem onSelect={() => navigate("/account")}>
+                <CircleUserRoundIcon />
                 Account
               </DropdownMenuItem>
-              <DropdownMenuItem>
-                <CreditCardIcon
-                />
-                Billing
+              <DropdownMenuItem onSelect={() => navigate("/settings")}>
+                <SettingsIcon />
+                Settings
               </DropdownMenuItem>
-              <DropdownMenuItem>
-                <BellIcon
-                />
+              <DropdownMenuItem onSelect={() => navigate("/notifications")}>
+                <BellIcon />
                 Notifications
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
             <DropdownMenuItem>
-              <LogOutIcon
-              />
-              Log out
+              <LogOutIcon className="text-red-600" />
+              <span className="text-red-600">Log out</span>
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
