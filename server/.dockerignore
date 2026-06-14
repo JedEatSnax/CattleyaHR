@@ -1,11 +1,10 @@
 # Remove unnecessary files
 
 /test
-/.agents
-/.claude
 README.md
 AGENTS.md
 CLAUDE.md
+.gitignore
 
 # Node modules
 
@@ -48,3 +47,5 @@ CLAUDE.md
 # Snapshot cheatcodes output
 
 /snapshots
+
+/generated/prisma

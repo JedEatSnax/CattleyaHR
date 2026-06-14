@@ -18,3 +18,7 @@ When writing or modifying tests, configuring `hardhat.config.ts`, or interacting
 
 - Hardhat 3 — https://hardhat.org/llms.txt
 - ethers.js — https://docs.ethers.org/v6/
+- Prisma ORM — https://www.prisma.io/llms.txt
+  —
+  —
+  —

@@ -1,5 +1,7 @@
 allowBuilds:
+  '@prisma/engines': set this to true or false
   esbuild: true
+  prisma: set this to true or false
 minimumReleaseAgeExclude:
   - elliptic@6.6.1
   - diff@8.0.3
